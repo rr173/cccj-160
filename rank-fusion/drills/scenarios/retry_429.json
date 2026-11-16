@@ -1,0 +1,34 @@
+{
+  "catalog_snapshot": "snap-retry-2026-11-16",
+  "sources": [
+    {
+      "source_id": "src-a",
+      "snapshot": "snap-retry-2026-11-16",
+      "page_size": 1,
+      "faults": [
+        {"op": "page", "nth": 1, "attempt": 1, "status": 429, "latency": 0.15},
+        {"op": "item", "nth": 2, "attempt": 1, "status": 503}
+      ],
+      "entries": [
+        {"item_id": "a", "score": "1"},
+        {"item_id": "c", "score": "3/5"},
+        {"item_id": "z-tail-a", "score": "1/10"},
+        {"item_id": "b", "score": "0"}
+      ]
+    },
+    {
+      "source_id": "src-b",
+      "snapshot": "snap-retry-2026-11-16",
+      "page_size": 1,
+      "faults": [
+        {"op": "page", "nth": 1, "attempt": 1, "status": 503, "latency": 0.02}
+      ],
+      "entries": [
+        {"item_id": "b", "score": "1"},
+        {"item_id": "c", "score": "3/5"},
+        {"item_id": "z-tail-b", "score": "1/10"},
+        {"item_id": "a", "score": "0"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "catalog": "all_empty.json",
+  "request": "all_empty.request.json",
+  "snapshot": "snap-allempty-2026-11-16",
+  "k": 3,
+  "weights": {
+    "e1": "1/2",
+    "e2": "1/2"
+  },
+  "result": {
+    "status": "complete",
+    "catalog_snapshot": "snap-allempty-2026-11-16",
+    "requested_k": 0,
+    "observed_candidate_count": 0,
+    "union_fully_enumerated": true,
+    "universe_size": 0,
+    "items": [],
+    "source_stats": [
+      {
+        "source_id": "e1",
+        "pages_read": 1,
+        "point_lookups": 0,
+        "empty_pages": 1,
+        "http_attempts": 1,
+        "retries": 0,
+        "exhausted": true,
+        "last_cursor": null,
+        "current_upper_bound": "0",
+        "current_weighted_bound": "0"
+      },
+      {
+        "source_id": "e2",
+        "pages_read": 1,
+        "point_lookups": 0,
+        "empty_pages": 1,
+        "http_attempts": 1,
+        "retries": 0,
+        "exhausted": true,
+        "last_cursor": null,
+        "current_upper_bound": "0",
+        "current_weighted_bound": "0"
+      }
+    ],
+    "stop_boundary": {
+      "reason": "all_sources_empty",
+      "kth_item_id": null,
+      "kth_total": null,
+      "unseen_potential": "0",
+      "unseen_potential_breakdown": [],
+      "blocking_seen_candidates": [],
+      "notes": "every source returned its terminal cursor with no records"
+    }
+  },
+  "check": {
+    "expectation": "ranking",
+    "ok": true,
+    "problems": []
+  }
+}

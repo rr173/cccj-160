@@ -1,0 +1,27 @@
+{
+  "catalog_snapshot": "snap-main-2026-11-16",
+  "sources": [
+    {
+      "source_id": "src-a",
+      "snapshot": "snap-main-2026-11-16",
+      "page_size": 1,
+      "entries": [
+        {"item_id": "a", "score": "1"},
+        {"item_id": "c", "score": "3/5"},
+        {"item_id": "z-tail-a", "score": "1/10"},
+        {"item_id": "b", "score": "0"}
+      ]
+    },
+    {
+      "source_id": "src-b",
+      "snapshot": "snap-main-2026-11-16",
+      "page_size": 1,
+      "entries": [
+        {"item_id": "b", "score": "1"},
+        {"item_id": "c", "score": "3/5"},
+        {"item_id": "z-tail-b", "score": "1/10"},
+        {"item_id": "a", "score": "0"}
+      ]
+    }
+  ]
+}

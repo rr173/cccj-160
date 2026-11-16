@@ -1,0 +1,339 @@
+{
+  "catalog": "retry_429.json",
+  "snapshot": "snap-retry-2026-11-16",
+  "event_count": 28,
+  "trace": [
+    {
+      "event": "stop_deferred",
+      "reasons": [
+        "fewer_than_k_resolved_items"
+      ],
+      "resolved_count": 0,
+      "unseen_potential": "2",
+      "bounds": {
+        "src-a": "1",
+        "src-b": "1"
+      },
+      "seq": 1
+    },
+    {
+      "event": "http_request",
+      "source_id": "src-b",
+      "op": "page",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:36395/page?source_id=src-b&snapshot=snap-retry-2026-11-16&cursor=",
+      "status": 503,
+      "result": "retryable_status",
+      "seq": 2
+    },
+    {
+      "event": "http_request",
+      "source_id": "src-b",
+      "op": "page",
+      "attempt": 2,
+      "method": "GET",
+      "url": "http://127.0.0.1:36395/page?source_id=src-b&snapshot=snap-retry-2026-11-16&cursor=",
+      "status": 200,
+      "result": "ok",
+      "seq": 3
+    },
+    {
+      "event": "page_applied",
+      "seq": 4,
+      "source_id": "src-b",
+      "cursor": "eyJvZmYiOjEsInNsb3QiOjF9",
+      "records": [
+        {
+          "item_id": "b",
+          "score": "1"
+        }
+      ],
+      "next_cursor": "eyJvZmYiOjEsInNsb3QiOjF9",
+      "upper_bound": "3/5",
+      "attempts": 2,
+      "retries": 1
+    },
+    {
+      "event": "http_request",
+      "source_id": "src-a",
+      "op": "page",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:36395/page?source_id=src-a&snapshot=snap-retry-2026-11-16&cursor=",
+      "status": 429,
+      "result": "retryable_status",
+      "seq": 5
+    },
+    {
+      "event": "http_request",
+      "source_id": "src-a",
+      "op": "page",
+      "attempt": 2,
+      "method": "GET",
+      "url": "http://127.0.0.1:36395/page?source_id=src-a&snapshot=snap-retry-2026-11-16&cursor=",
+      "status": 200,
+      "result": "ok",
+      "seq": 6
+    },
+    {
+      "event": "page_applied",
+      "seq": 7,
+      "source_id": "src-a",
+      "cursor": "eyJvZmYiOjEsInNsb3QiOjF9",
+      "records": [
+        {
+          "item_id": "a",
+          "score": "1"
+        }
+      ],
+      "next_cursor": "eyJvZmYiOjEsInNsb3QiOjF9",
+      "upper_bound": "3/5",
+      "attempts": 2,
+      "retries": 1
+    },
+    {
+      "event": "stop_deferred",
+      "reasons": [
+        "fewer_than_k_resolved_items"
+      ],
+      "resolved_count": 0,
+      "unseen_potential": "6/5",
+      "bounds": {
+        "src-a": "3/5",
+        "src-b": "3/5"
+      },
+      "seq": 8
+    },
+    {
+      "event": "http_request",
+      "source_id": "src-a",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:36395/item?source_id=src-a&snapshot=snap-retry-2026-11-16&item_id=b",
+      "status": 200,
+      "result": "ok",
+      "seq": 9
+    },
+    {
+      "event": "item_applied",
+      "seq": 10,
+      "source_id": "src-a",
+      "item_id": "b",
+      "present": true,
+      "score": "0",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "http_request",
+      "source_id": "src-b",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:36395/item?source_id=src-b&snapshot=snap-retry-2026-11-16&item_id=b",
+      "status": 200,
+      "result": "ok",
+      "seq": 11
+    },
+    {
+      "event": "item_applied",
+      "seq": 12,
+      "source_id": "src-b",
+      "item_id": "b",
+      "present": true,
+      "score": "1",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "stop_deferred",
+      "reasons": [
+        "unseen_potential_ge_kth"
+      ],
+      "resolved_count": 1,
+      "unseen_potential": "6/5",
+      "bounds": {
+        "src-a": "3/5",
+        "src-b": "3/5"
+      },
+      "seq": 13
+    },
+    {
+      "event": "http_request",
+      "source_id": "src-a",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:36395/item?source_id=src-a&snapshot=snap-retry-2026-11-16&item_id=a",
+      "status": 503,
+      "result": "retryable_status",
+      "seq": 14
+    },
+    {
+      "event": "http_request",
+      "source_id": "src-b",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:36395/item?source_id=src-b&snapshot=snap-retry-2026-11-16&item_id=a",
+      "status": 200,
+      "result": "ok",
+      "seq": 15
+    },
+    {
+      "event": "item_applied",
+      "seq": 16,
+      "source_id": "src-b",
+      "item_id": "a",
+      "present": true,
+      "score": "0",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "http_request",
+      "source_id": "src-a",
+      "op": "item",
+      "attempt": 2,
+      "method": "GET",
+      "url": "http://127.0.0.1:36395/item?source_id=src-a&snapshot=snap-retry-2026-11-16&item_id=a",
+      "status": 200,
+      "result": "ok",
+      "seq": 17
+    },
+    {
+      "event": "item_applied",
+      "seq": 18,
+      "source_id": "src-a",
+      "item_id": "a",
+      "present": true,
+      "score": "1",
+      "attempts": 2,
+      "retries": 1
+    },
+    {
+      "event": "stop_deferred",
+      "reasons": [
+        "unseen_potential_ge_kth"
+      ],
+      "resolved_count": 2,
+      "unseen_potential": "6/5",
+      "bounds": {
+        "src-a": "3/5",
+        "src-b": "3/5"
+      },
+      "seq": 19
+    },
+    {
+      "event": "http_request",
+      "source_id": "src-a",
+      "op": "page",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:36395/page?source_id=src-a&snapshot=snap-retry-2026-11-16&cursor=eyJvZmYiOjEsInNsb3QiOjF9",
+      "status": 200,
+      "result": "ok",
+      "seq": 20
+    },
+    {
+      "event": "page_applied",
+      "seq": 21,
+      "source_id": "src-a",
+      "cursor": "eyJvZmYiOjIsInNsb3QiOjJ9",
+      "records": [
+        {
+          "item_id": "c",
+          "score": "3/5"
+        }
+      ],
+      "next_cursor": "eyJvZmYiOjIsInNsb3QiOjJ9",
+      "upper_bound": "1/10",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "http_request",
+      "source_id": "src-b",
+      "op": "page",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:36395/page?source_id=src-b&snapshot=snap-retry-2026-11-16&cursor=eyJvZmYiOjEsInNsb3QiOjF9",
+      "status": 200,
+      "result": "ok",
+      "seq": 22
+    },
+    {
+      "event": "page_applied",
+      "seq": 23,
+      "source_id": "src-b",
+      "cursor": "eyJvZmYiOjIsInNsb3QiOjJ9",
+      "records": [
+        {
+          "item_id": "c",
+          "score": "3/5"
+        }
+      ],
+      "next_cursor": "eyJvZmYiOjIsInNsb3QiOjJ9",
+      "upper_bound": "1/10",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "stop_deferred",
+      "reasons": [
+        "1_unresolved_seen_candidate(s)"
+      ],
+      "resolved_count": 2,
+      "unseen_potential": "1/5",
+      "bounds": {
+        "src-a": "1/10",
+        "src-b": "1/10"
+      },
+      "seq": 24
+    },
+    {
+      "event": "http_request",
+      "source_id": "src-a",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:36395/item?source_id=src-a&snapshot=snap-retry-2026-11-16&item_id=c",
+      "status": 200,
+      "result": "ok",
+      "seq": 25
+    },
+    {
+      "event": "item_applied",
+      "seq": 26,
+      "source_id": "src-a",
+      "item_id": "c",
+      "present": true,
+      "score": "3/5",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "http_request",
+      "source_id": "src-b",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:36395/item?source_id=src-b&snapshot=snap-retry-2026-11-16&item_id=c",
+      "status": 200,
+      "result": "ok",
+      "seq": 27
+    },
+    {
+      "event": "item_applied",
+      "seq": 28,
+      "source_id": "src-b",
+      "item_id": "c",
+      "present": true,
+      "score": "3/5",
+      "attempts": 1,
+      "retries": 0
+    }
+  ]
+}

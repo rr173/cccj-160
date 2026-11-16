@@ -1,0 +1,17 @@
+{
+  "catalog_snapshot": "snap-allempty-2026-11-16",
+  "sources": [
+    {
+      "source_id": "e1",
+      "snapshot": "snap-allempty-2026-11-16",
+      "page_size": 3,
+      "entries": []
+    },
+    {
+      "source_id": "e2",
+      "snapshot": "snap-allempty-2026-11-16",
+      "page_size": 1,
+      "entries": []
+    }
+  ]
+}

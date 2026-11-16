@@ -1,0 +1,33 @@
+{
+  "catalog_snapshot": "snap-badbound-2026-11-16",
+  "sources": [
+    {
+      "source_id": "up",
+      "snapshot": "snap-badbound-2026-11-16",
+      "page_size": 2,
+      "faults": [
+        {"op": "page", "nth": 2, "attempt": 1, "bad_bound": "1/2"}
+      ],
+      "entries": [
+        {"item_id": "u1", "score": "1"},
+        {"item_id": "u2", "score": "3/4"},
+        {"item_id": "u3", "score": "1/3"},
+        {"item_id": "u4", "score": "1/3"}
+      ]
+    },
+    {
+      "source_id": "low",
+      "snapshot": "snap-badbound-2026-11-16",
+      "page_size": 2,
+      "faults": [
+        {"op": "page", "nth": 1, "attempt": 1, "bad_bound": "1/100"}
+      ],
+      "entries": [
+        {"item_id": "l1", "score": "1"},
+        {"item_id": "l2", "score": "3/4"},
+        {"item_id": "l3", "score": "1/2"},
+        {"item_id": "l4", "score": "1/2"}
+      ]
+    }
+  ]
+}

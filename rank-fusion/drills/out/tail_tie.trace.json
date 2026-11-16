@@ -1,0 +1,549 @@
+{
+  "catalog": "tail_tie.json",
+  "snapshot": "snap-tailtie-2026-11-16",
+  "event_count": 45,
+  "trace": [
+    {
+      "event": "stop_deferred",
+      "reasons": [
+        "fewer_than_k_resolved_items"
+      ],
+      "resolved_count": 0,
+      "unseen_potential": "2",
+      "bounds": {
+        "src-1": "1",
+        "src-2": "1"
+      },
+      "seq": 1
+    },
+    {
+      "event": "http_request",
+      "source_id": "src-1",
+      "op": "page",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:39445/page?source_id=src-1&snapshot=snap-tailtie-2026-11-16&cursor=",
+      "status": 200,
+      "result": "ok",
+      "seq": 2
+    },
+    {
+      "event": "page_applied",
+      "seq": 3,
+      "source_id": "src-1",
+      "cursor": "eyJvZmYiOjEsInNsb3QiOjF9",
+      "records": [
+        {
+          "item_id": "a1",
+          "score": "1/2"
+        }
+      ],
+      "next_cursor": "eyJvZmYiOjEsInNsb3QiOjF9",
+      "upper_bound": "1/2",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "stop_deferred",
+      "reasons": [
+        "fewer_than_k_resolved_items"
+      ],
+      "resolved_count": 0,
+      "unseen_potential": "3/2",
+      "bounds": {
+        "src-1": "1/2",
+        "src-2": "1"
+      },
+      "seq": 4
+    },
+    {
+      "event": "http_request",
+      "source_id": "src-1",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:39445/item?source_id=src-1&snapshot=snap-tailtie-2026-11-16&item_id=a1",
+      "status": 200,
+      "result": "ok",
+      "seq": 5
+    },
+    {
+      "event": "item_applied",
+      "seq": 6,
+      "source_id": "src-1",
+      "item_id": "a1",
+      "present": true,
+      "score": "1/2",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "stop_deferred",
+      "reasons": [
+        "fewer_than_k_resolved_items"
+      ],
+      "resolved_count": 0,
+      "unseen_potential": "3/2",
+      "bounds": {
+        "src-1": "1/2",
+        "src-2": "1"
+      },
+      "seq": 7
+    },
+    {
+      "event": "http_request",
+      "source_id": "src-2",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:39445/item?source_id=src-2&snapshot=snap-tailtie-2026-11-16&item_id=a1",
+      "status": 200,
+      "result": "ok",
+      "seq": 8
+    },
+    {
+      "event": "item_applied",
+      "seq": 9,
+      "source_id": "src-2",
+      "item_id": "a1",
+      "present": false,
+      "score": null,
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "stop_deferred",
+      "reasons": [
+        "unseen_potential_ge_kth"
+      ],
+      "resolved_count": 1,
+      "unseen_potential": "3/2",
+      "bounds": {
+        "src-1": "1/2",
+        "src-2": "1"
+      },
+      "seq": 10
+    },
+    {
+      "event": "http_request",
+      "source_id": "src-1",
+      "op": "page",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:39445/page?source_id=src-1&snapshot=snap-tailtie-2026-11-16&cursor=eyJvZmYiOjEsInNsb3QiOjF9",
+      "status": 200,
+      "result": "ok",
+      "seq": 11
+    },
+    {
+      "event": "page_applied",
+      "seq": 12,
+      "source_id": "src-1",
+      "cursor": "eyJvZmYiOjIsInNsb3QiOjJ9",
+      "records": [
+        {
+          "item_id": "m",
+          "score": "1/2"
+        }
+      ],
+      "next_cursor": "eyJvZmYiOjIsInNsb3QiOjJ9",
+      "upper_bound": "1/4",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "stop_deferred",
+      "reasons": [
+        "unseen_potential_ge_kth"
+      ],
+      "resolved_count": 1,
+      "unseen_potential": "5/4",
+      "bounds": {
+        "src-1": "1/4",
+        "src-2": "1"
+      },
+      "seq": 13
+    },
+    {
+      "event": "http_request",
+      "source_id": "src-1",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:39445/item?source_id=src-1&snapshot=snap-tailtie-2026-11-16&item_id=m",
+      "status": 200,
+      "result": "ok",
+      "seq": 14
+    },
+    {
+      "event": "item_applied",
+      "seq": 15,
+      "source_id": "src-1",
+      "item_id": "m",
+      "present": true,
+      "score": "1/2",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "stop_deferred",
+      "reasons": [
+        "unseen_potential_ge_kth"
+      ],
+      "resolved_count": 1,
+      "unseen_potential": "5/4",
+      "bounds": {
+        "src-1": "1/4",
+        "src-2": "1"
+      },
+      "seq": 16
+    },
+    {
+      "event": "http_request",
+      "source_id": "src-2",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:39445/item?source_id=src-2&snapshot=snap-tailtie-2026-11-16&item_id=m",
+      "status": 200,
+      "result": "ok",
+      "seq": 17
+    },
+    {
+      "event": "item_applied",
+      "seq": 18,
+      "source_id": "src-2",
+      "item_id": "m",
+      "present": false,
+      "score": null,
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "stop_deferred",
+      "reasons": [
+        "unseen_potential_ge_kth"
+      ],
+      "resolved_count": 2,
+      "unseen_potential": "5/4",
+      "bounds": {
+        "src-1": "1/4",
+        "src-2": "1"
+      },
+      "seq": 19
+    },
+    {
+      "event": "http_request",
+      "source_id": "src-1",
+      "op": "page",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:39445/page?source_id=src-1&snapshot=snap-tailtie-2026-11-16&cursor=eyJvZmYiOjIsInNsb3QiOjJ9",
+      "status": 200,
+      "result": "ok",
+      "seq": 20
+    },
+    {
+      "event": "page_applied",
+      "seq": 21,
+      "source_id": "src-1",
+      "cursor": null,
+      "records": [
+        {
+          "item_id": "r1",
+          "score": "1/4"
+        }
+      ],
+      "next_cursor": null,
+      "upper_bound": null,
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "stop_deferred",
+      "reasons": [
+        "unseen_potential_ge_kth"
+      ],
+      "resolved_count": 2,
+      "unseen_potential": "1",
+      "bounds": {
+        "src-1": "0",
+        "src-2": "1"
+      },
+      "seq": 22
+    },
+    {
+      "event": "http_request",
+      "source_id": "src-1",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:39445/item?source_id=src-1&snapshot=snap-tailtie-2026-11-16&item_id=r1",
+      "status": 200,
+      "result": "ok",
+      "seq": 23
+    },
+    {
+      "event": "item_applied",
+      "seq": 24,
+      "source_id": "src-1",
+      "item_id": "r1",
+      "present": true,
+      "score": "1/4",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "stop_deferred",
+      "reasons": [
+        "unseen_potential_ge_kth"
+      ],
+      "resolved_count": 2,
+      "unseen_potential": "1",
+      "bounds": {
+        "src-1": "0",
+        "src-2": "1"
+      },
+      "seq": 25
+    },
+    {
+      "event": "http_request",
+      "source_id": "src-2",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:39445/item?source_id=src-2&snapshot=snap-tailtie-2026-11-16&item_id=r1",
+      "status": 200,
+      "result": "ok",
+      "seq": 26
+    },
+    {
+      "event": "item_applied",
+      "seq": 27,
+      "source_id": "src-2",
+      "item_id": "r1",
+      "present": false,
+      "score": null,
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "stop_deferred",
+      "reasons": [
+        "unseen_potential_ge_kth"
+      ],
+      "resolved_count": 3,
+      "unseen_potential": "1",
+      "bounds": {
+        "src-1": "0",
+        "src-2": "1"
+      },
+      "seq": 28
+    },
+    {
+      "event": "http_request",
+      "source_id": "src-2",
+      "op": "page",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:39445/page?source_id=src-2&snapshot=snap-tailtie-2026-11-16&cursor=",
+      "status": 200,
+      "result": "ok",
+      "seq": 29
+    },
+    {
+      "event": "page_applied",
+      "seq": 30,
+      "source_id": "src-2",
+      "cursor": "eyJvZmYiOjEsInNsb3QiOjF9",
+      "records": [
+        {
+          "item_id": "a2",
+          "score": "1/2"
+        }
+      ],
+      "next_cursor": "eyJvZmYiOjEsInNsb3QiOjF9",
+      "upper_bound": "1/2",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "stop_deferred",
+      "reasons": [
+        "1_unresolved_seen_candidate(s)",
+        "unseen_potential_ge_kth(equal: smaller-id unseen item could win tie-break)"
+      ],
+      "resolved_count": 3,
+      "unseen_potential": "1/2",
+      "bounds": {
+        "src-1": "0",
+        "src-2": "1/2"
+      },
+      "seq": 31
+    },
+    {
+      "event": "http_request",
+      "source_id": "src-1",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:39445/item?source_id=src-1&snapshot=snap-tailtie-2026-11-16&item_id=a2",
+      "status": 200,
+      "result": "ok",
+      "seq": 32
+    },
+    {
+      "event": "item_applied",
+      "seq": 33,
+      "source_id": "src-1",
+      "item_id": "a2",
+      "present": false,
+      "score": null,
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "stop_deferred",
+      "reasons": [
+        "1_unresolved_seen_candidate(s)",
+        "unseen_potential_ge_kth(equal: smaller-id unseen item could win tie-break)"
+      ],
+      "resolved_count": 3,
+      "unseen_potential": "1/2",
+      "bounds": {
+        "src-1": "0",
+        "src-2": "1/2"
+      },
+      "seq": 34
+    },
+    {
+      "event": "http_request",
+      "source_id": "src-2",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:39445/item?source_id=src-2&snapshot=snap-tailtie-2026-11-16&item_id=a2",
+      "status": 200,
+      "result": "ok",
+      "seq": 35
+    },
+    {
+      "event": "item_applied",
+      "seq": 36,
+      "source_id": "src-2",
+      "item_id": "a2",
+      "present": true,
+      "score": "1/2",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "stop_deferred",
+      "reasons": [
+        "unseen_potential_ge_kth(equal: smaller-id unseen item could win tie-break)"
+      ],
+      "resolved_count": 4,
+      "unseen_potential": "1/2",
+      "bounds": {
+        "src-1": "0",
+        "src-2": "1/2"
+      },
+      "seq": 37
+    },
+    {
+      "event": "http_request",
+      "source_id": "src-2",
+      "op": "page",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:39445/page?source_id=src-2&snapshot=snap-tailtie-2026-11-16&cursor=eyJvZmYiOjEsInNsb3QiOjF9",
+      "status": 200,
+      "result": "ok",
+      "seq": 38
+    },
+    {
+      "event": "page_applied",
+      "seq": 39,
+      "source_id": "src-2",
+      "cursor": "eyJvZmYiOjIsInNsb3QiOjJ9",
+      "records": [
+        {
+          "item_id": "q",
+          "score": "1/2"
+        }
+      ],
+      "next_cursor": "eyJvZmYiOjIsInNsb3QiOjJ9",
+      "upper_bound": "1/4",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "stop_deferred",
+      "reasons": [
+        "1_unresolved_seen_candidate(s)"
+      ],
+      "resolved_count": 4,
+      "unseen_potential": "1/4",
+      "bounds": {
+        "src-1": "0",
+        "src-2": "1/4"
+      },
+      "seq": 40
+    },
+    {
+      "event": "http_request",
+      "source_id": "src-1",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:39445/item?source_id=src-1&snapshot=snap-tailtie-2026-11-16&item_id=q",
+      "status": 200,
+      "result": "ok",
+      "seq": 41
+    },
+    {
+      "event": "item_applied",
+      "seq": 42,
+      "source_id": "src-1",
+      "item_id": "q",
+      "present": false,
+      "score": null,
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "stop_deferred",
+      "reasons": [
+        "1_unresolved_seen_candidate(s)"
+      ],
+      "resolved_count": 4,
+      "unseen_potential": "1/4",
+      "bounds": {
+        "src-1": "0",
+        "src-2": "1/4"
+      },
+      "seq": 43
+    },
+    {
+      "event": "http_request",
+      "source_id": "src-2",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:39445/item?source_id=src-2&snapshot=snap-tailtie-2026-11-16&item_id=q",
+      "status": 200,
+      "result": "ok",
+      "seq": 44
+    },
+    {
+      "event": "item_applied",
+      "seq": 45,
+      "source_id": "src-2",
+      "item_id": "q",
+      "present": true,
+      "score": "1/2",
+      "attempts": 1,
+      "retries": 0
+    }
+  ]
+}

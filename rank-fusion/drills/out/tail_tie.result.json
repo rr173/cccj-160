@@ -1,0 +1,95 @@
+{
+  "catalog": "tail_tie.json",
+  "request": "tail_tie.request.json",
+  "snapshot": "snap-tailtie-2026-11-16",
+  "k": 1,
+  "weights": {
+    "src-1": "1",
+    "src-2": "1"
+  },
+  "result": {
+    "status": "complete",
+    "catalog_snapshot": "snap-tailtie-2026-11-16",
+    "requested_k": 1,
+    "observed_candidate_count": 5,
+    "union_fully_enumerated": false,
+    "universe_size": null,
+    "items": [
+      {
+        "item_id": "a1",
+        "total_score": "1/2",
+        "components": [
+          {
+            "source_id": "src-1",
+            "weight": "1",
+            "score": "1/2",
+            "weighted_score": "1/2",
+            "known": true
+          },
+          {
+            "source_id": "src-2",
+            "weight": "1",
+            "score": "0",
+            "weighted_score": "0",
+            "known": true
+          }
+        ]
+      }
+    ],
+    "source_stats": [
+      {
+        "source_id": "src-1",
+        "pages_read": 3,
+        "point_lookups": 5,
+        "empty_pages": 0,
+        "http_attempts": 8,
+        "retries": 0,
+        "exhausted": true,
+        "last_cursor": null,
+        "current_upper_bound": "0",
+        "current_weighted_bound": "0"
+      },
+      {
+        "source_id": "src-2",
+        "pages_read": 2,
+        "point_lookups": 5,
+        "empty_pages": 0,
+        "http_attempts": 7,
+        "retries": 0,
+        "exhausted": false,
+        "last_cursor": "eyJvZmYiOjIsInNsb3QiOjJ9",
+        "current_upper_bound": "1/4",
+        "current_weighted_bound": "1/4"
+      }
+    ],
+    "stop_boundary": {
+      "reason": "certified_top_k",
+      "kth_item_id": "a1",
+      "kth_total": "1/2",
+      "unseen_potential": "1/4",
+      "unseen_potential_breakdown": [
+        {
+          "source_id": "src-1",
+          "weight": "1",
+          "bound": "0",
+          "weighted_bound": "0",
+          "exhausted": true
+        },
+        {
+          "source_id": "src-2",
+          "weight": "1",
+          "bound": "1/4",
+          "weighted_bound": "1/4",
+          "exhausted": false
+        }
+      ],
+      "blocking_seen_candidates": [],
+      "notes": "All ranked items have every source component confirmed. Every unresolved/unseen candidate is strictly behind the K-th item for every possible completion; equal unseen potential would have forced continued paging."
+    }
+  },
+  "check": {
+    "expectation": "ranking",
+    "ok": true,
+    "problems": []
+  }
+}

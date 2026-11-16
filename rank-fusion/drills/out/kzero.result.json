@@ -1,0 +1,53 @@
+{
+  "catalog": "main.json",
+  "request": "kzero.request.json",
+  "result": {
+    "status": "complete",
+    "catalog_snapshot": "snap-main-2026-11-16",
+    "requested_k": 0,
+    "observed_candidate_count": 0,
+    "union_fully_enumerated": false,
+    "universe_size": null,
+    "items": [],
+    "source_stats": [
+      {
+        "source_id": "src-a",
+        "pages_read": 0,
+        "point_lookups": 0,
+        "empty_pages": 0,
+        "http_attempts": 0,
+        "retries": 0,
+        "exhausted": false,
+        "last_cursor": null,
+        "current_upper_bound": null,
+        "current_weighted_bound": null
+      },
+      {
+        "source_id": "src-b",
+        "pages_read": 0,
+        "point_lookups": 0,
+        "empty_pages": 0,
+        "http_attempts": 0,
+        "retries": 0,
+        "exhausted": false,
+        "last_cursor": null,
+        "current_upper_bound": null,
+        "current_weighted_bound": null
+      }
+    ],
+    "stop_boundary": {
+      "reason": "k_zero",
+      "kth_item_id": null,
+      "kth_total": null,
+      "unseen_potential": "0",
+      "unseen_potential_breakdown": [],
+      "blocking_seen_candidates": [],
+      "notes": "K=0 returns an empty ranking without reading any page"
+    }
+  },
+  "check": {
+    "expectation": "k_zero_no_io",
+    "ok": true,
+    "problems": []
+  }
+}

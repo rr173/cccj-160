@@ -1,0 +1,362 @@
+{
+  "catalog": "near_tie.json",
+  "snapshot": "snap-neartie-2026-11-16",
+  "event_count": 30,
+  "trace": [
+    {
+      "event": "stop_deferred",
+      "reasons": [
+        "fewer_than_k_resolved_items"
+      ],
+      "resolved_count": 0,
+      "unseen_potential": "2",
+      "bounds": {
+        "n1": "1",
+        "n2": "1"
+      },
+      "seq": 1
+    },
+    {
+      "event": "http_request",
+      "source_id": "n1",
+      "op": "page",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:44459/page?source_id=n1&snapshot=snap-neartie-2026-11-16&cursor=",
+      "status": 200,
+      "result": "ok",
+      "seq": 2
+    },
+    {
+      "event": "page_applied",
+      "seq": 3,
+      "source_id": "n1",
+      "cursor": "eyJvZmYiOjIsInNsb3QiOjF9",
+      "records": [
+        {
+          "item_id": "hi",
+          "score": "1"
+        },
+        {
+          "item_id": "bb-far",
+          "score": "10000000000000001/100000000000000000"
+        }
+      ],
+      "next_cursor": "eyJvZmYiOjIsInNsb3QiOjF9",
+      "upper_bound": "1/10",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "http_request",
+      "source_id": "n2",
+      "op": "page",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:44459/page?source_id=n2&snapshot=snap-neartie-2026-11-16&cursor=",
+      "status": 200,
+      "result": "ok",
+      "seq": 4
+    },
+    {
+      "event": "page_applied",
+      "seq": 5,
+      "source_id": "n2",
+      "cursor": null,
+      "records": [
+        {
+          "item_id": "hi",
+          "score": "1/2"
+        },
+        {
+          "item_id": "only-n2",
+          "score": "1/7"
+        }
+      ],
+      "next_cursor": null,
+      "upper_bound": null,
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "stop_deferred",
+      "reasons": [
+        "fewer_than_k_resolved_items"
+      ],
+      "resolved_count": 0,
+      "unseen_potential": "1/10",
+      "bounds": {
+        "n1": "1/10",
+        "n2": "0"
+      },
+      "seq": 6
+    },
+    {
+      "event": "http_request",
+      "source_id": "n1",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:44459/item?source_id=n1&snapshot=snap-neartie-2026-11-16&item_id=hi",
+      "status": 200,
+      "result": "ok",
+      "seq": 7
+    },
+    {
+      "event": "item_applied",
+      "seq": 8,
+      "source_id": "n1",
+      "item_id": "hi",
+      "present": true,
+      "score": "1",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "http_request",
+      "source_id": "n2",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:44459/item?source_id=n2&snapshot=snap-neartie-2026-11-16&item_id=hi",
+      "status": 200,
+      "result": "ok",
+      "seq": 9
+    },
+    {
+      "event": "item_applied",
+      "seq": 10,
+      "source_id": "n2",
+      "item_id": "hi",
+      "present": true,
+      "score": "1/2",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "http_request",
+      "source_id": "n1",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:44459/item?source_id=n1&snapshot=snap-neartie-2026-11-16&item_id=bb-far",
+      "status": 200,
+      "result": "ok",
+      "seq": 11
+    },
+    {
+      "event": "item_applied",
+      "seq": 12,
+      "source_id": "n1",
+      "item_id": "bb-far",
+      "present": true,
+      "score": "10000000000000001/100000000000000000",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "http_request",
+      "source_id": "n2",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:44459/item?source_id=n2&snapshot=snap-neartie-2026-11-16&item_id=bb-far",
+      "status": 200,
+      "result": "ok",
+      "seq": 13
+    },
+    {
+      "event": "item_applied",
+      "seq": 14,
+      "source_id": "n2",
+      "item_id": "bb-far",
+      "present": false,
+      "score": null,
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "stop_deferred",
+      "reasons": [
+        "fewer_than_k_resolved_items"
+      ],
+      "resolved_count": 2,
+      "unseen_potential": "1/10",
+      "bounds": {
+        "n1": "1/10",
+        "n2": "0"
+      },
+      "seq": 15
+    },
+    {
+      "event": "http_request",
+      "source_id": "n1",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:44459/item?source_id=n1&snapshot=snap-neartie-2026-11-16&item_id=only-n2",
+      "status": 200,
+      "result": "ok",
+      "seq": 16
+    },
+    {
+      "event": "item_applied",
+      "seq": 17,
+      "source_id": "n1",
+      "item_id": "only-n2",
+      "present": false,
+      "score": null,
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "http_request",
+      "source_id": "n2",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:44459/item?source_id=n2&snapshot=snap-neartie-2026-11-16&item_id=only-n2",
+      "status": 200,
+      "result": "ok",
+      "seq": 18
+    },
+    {
+      "event": "item_applied",
+      "seq": 19,
+      "source_id": "n2",
+      "item_id": "only-n2",
+      "present": true,
+      "score": "1/7",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "http_request",
+      "source_id": "n1",
+      "op": "page",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:44459/page?source_id=n1&snapshot=snap-neartie-2026-11-16&cursor=eyJvZmYiOjIsInNsb3QiOjF9",
+      "status": 200,
+      "result": "ok",
+      "seq": 20
+    },
+    {
+      "event": "page_applied",
+      "seq": 21,
+      "source_id": "n1",
+      "cursor": null,
+      "records": [
+        {
+          "item_id": "aa-near",
+          "score": "1/10"
+        },
+        {
+          "item_id": "zero-z",
+          "score": "0"
+        }
+      ],
+      "next_cursor": null,
+      "upper_bound": null,
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "stop_deferred",
+      "reasons": [
+        "fewer_than_k_resolved_items"
+      ],
+      "resolved_count": 3,
+      "unseen_potential": "0",
+      "bounds": {
+        "n1": "0",
+        "n2": "0"
+      },
+      "seq": 22
+    },
+    {
+      "event": "http_request",
+      "source_id": "n1",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:44459/item?source_id=n1&snapshot=snap-neartie-2026-11-16&item_id=aa-near",
+      "status": 200,
+      "result": "ok",
+      "seq": 23
+    },
+    {
+      "event": "item_applied",
+      "seq": 24,
+      "source_id": "n1",
+      "item_id": "aa-near",
+      "present": true,
+      "score": "1/10",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "http_request",
+      "source_id": "n2",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:44459/item?source_id=n2&snapshot=snap-neartie-2026-11-16&item_id=aa-near",
+      "status": 200,
+      "result": "ok",
+      "seq": 25
+    },
+    {
+      "event": "item_applied",
+      "seq": 26,
+      "source_id": "n2",
+      "item_id": "aa-near",
+      "present": false,
+      "score": null,
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "http_request",
+      "source_id": "n1",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:44459/item?source_id=n1&snapshot=snap-neartie-2026-11-16&item_id=zero-z",
+      "status": 200,
+      "result": "ok",
+      "seq": 27
+    },
+    {
+      "event": "item_applied",
+      "seq": 28,
+      "source_id": "n1",
+      "item_id": "zero-z",
+      "present": true,
+      "score": "0",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "http_request",
+      "source_id": "n2",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:44459/item?source_id=n2&snapshot=snap-neartie-2026-11-16&item_id=zero-z",
+      "status": 200,
+      "result": "ok",
+      "seq": 29
+    },
+    {
+      "event": "item_applied",
+      "seq": 30,
+      "source_id": "n2",
+      "item_id": "zero-z",
+      "present": false,
+      "score": null,
+      "attempts": 1,
+      "retries": 0
+    }
+  ]
+}

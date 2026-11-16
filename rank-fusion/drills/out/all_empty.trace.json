@@ -1,0 +1,77 @@
+{
+  "catalog": "all_empty.json",
+  "snapshot": "snap-allempty-2026-11-16",
+  "event_count": 6,
+  "trace": [
+    {
+      "event": "stop_deferred",
+      "reasons": [
+        "fewer_than_k_resolved_items"
+      ],
+      "resolved_count": 0,
+      "unseen_potential": "1",
+      "bounds": {
+        "e1": "1",
+        "e2": "1"
+      },
+      "seq": 1
+    },
+    {
+      "event": "http_request",
+      "source_id": "e1",
+      "op": "page",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:36287/page?source_id=e1&snapshot=snap-allempty-2026-11-16&cursor=",
+      "status": 200,
+      "result": "ok",
+      "seq": 2
+    },
+    {
+      "event": "page_applied",
+      "seq": 3,
+      "source_id": "e1",
+      "cursor": null,
+      "records": [],
+      "next_cursor": null,
+      "upper_bound": null,
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "http_request",
+      "source_id": "e2",
+      "op": "page",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:36287/page?source_id=e2&snapshot=snap-allempty-2026-11-16&cursor=",
+      "status": 200,
+      "result": "ok",
+      "seq": 4
+    },
+    {
+      "event": "page_applied",
+      "seq": 5,
+      "source_id": "e2",
+      "cursor": null,
+      "records": [],
+      "next_cursor": null,
+      "upper_bound": null,
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "stop_deferred",
+      "reasons": [
+        "fewer_than_k_resolved_items"
+      ],
+      "resolved_count": 0,
+      "unseen_potential": "0",
+      "bounds": {
+        "e1": "0",
+        "e2": "0"
+      },
+      "seq": 6
+    }
+  ]
+}

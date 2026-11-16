@@ -1,0 +1,20 @@
+{
+  "catalog_snapshot": "snap-tailtie-2026-11-16",
+  "k": 1,
+  "weights": {
+    "src-1": "1",
+    "src-2": "1"
+  },
+  "sources": [
+    {
+      "source_id": "src-1",
+      "base_url": "${BASE_URL}"
+    },
+    {
+      "source_id": "src-2",
+      "base_url": "${BASE_URL}"
+    }
+  ],
+  "max_concurrency": 1,
+  "max_attempts": 5
+}

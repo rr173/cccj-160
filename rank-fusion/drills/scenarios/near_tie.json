@@ -1,0 +1,25 @@
+{
+  "catalog_snapshot": "snap-neartie-2026-11-16",
+  "sources": [
+    {
+      "source_id": "n1",
+      "snapshot": "snap-neartie-2026-11-16",
+      "page_size": 2,
+      "entries": [
+        {"item_id": "hi", "score": "1"},
+        {"item_id": "bb-far", "score": "10000000000000001/100000000000000000"},
+        {"item_id": "aa-near", "score": "1/10"},
+        {"item_id": "zero-z", "score": "0"}
+      ]
+    },
+    {
+      "source_id": "n2",
+      "snapshot": "snap-neartie-2026-11-16",
+      "page_size": 2,
+      "entries": [
+        {"item_id": "hi", "score": "1/2"},
+        {"item_id": "only-n2", "score": "1/7"}
+      ]
+    }
+  ]
+}

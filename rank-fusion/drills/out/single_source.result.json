@@ -1,0 +1,155 @@
+{
+  "catalog": "single_source.json",
+  "request": "single_source.request.json",
+  "snapshot": "snap-single-2026-11-16",
+  "k": 10,
+  "weights": {
+    "only": "2/3",
+    "empty-mirror": "1/3"
+  },
+  "result": {
+    "status": "complete",
+    "catalog_snapshot": "snap-single-2026-11-16",
+    "requested_k": 10,
+    "observed_candidate_count": 4,
+    "union_fully_enumerated": true,
+    "universe_size": 4,
+    "items": [
+      {
+        "item_id": "x1",
+        "total_score": "1/2",
+        "components": [
+          {
+            "source_id": "only",
+            "weight": "2/3",
+            "score": "3/4",
+            "weighted_score": "1/2",
+            "known": true
+          },
+          {
+            "source_id": "empty-mirror",
+            "weight": "1/3",
+            "score": "0",
+            "weighted_score": "0",
+            "known": true
+          }
+        ]
+      },
+      {
+        "item_id": "x2",
+        "total_score": "1/3",
+        "components": [
+          {
+            "source_id": "only",
+            "weight": "2/3",
+            "score": "1/2",
+            "weighted_score": "1/3",
+            "known": true
+          },
+          {
+            "source_id": "empty-mirror",
+            "weight": "1/3",
+            "score": "0",
+            "weighted_score": "0",
+            "known": true
+          }
+        ]
+      },
+      {
+        "item_id": "x3",
+        "total_score": "2/9",
+        "components": [
+          {
+            "source_id": "only",
+            "weight": "2/3",
+            "score": "1/3",
+            "weighted_score": "2/9",
+            "known": true
+          },
+          {
+            "source_id": "empty-mirror",
+            "weight": "1/3",
+            "score": "0",
+            "weighted_score": "0",
+            "known": true
+          }
+        ]
+      },
+      {
+        "item_id": "x4",
+        "total_score": "0",
+        "components": [
+          {
+            "source_id": "only",
+            "weight": "2/3",
+            "score": "0",
+            "weighted_score": "0",
+            "known": true
+          },
+          {
+            "source_id": "empty-mirror",
+            "weight": "1/3",
+            "score": "0",
+            "weighted_score": "0",
+            "known": true
+          }
+        ]
+      }
+    ],
+    "source_stats": [
+      {
+        "source_id": "only",
+        "pages_read": 2,
+        "point_lookups": 4,
+        "empty_pages": 0,
+        "http_attempts": 6,
+        "retries": 0,
+        "exhausted": true,
+        "last_cursor": null,
+        "current_upper_bound": "0",
+        "current_weighted_bound": "0"
+      },
+      {
+        "source_id": "empty-mirror",
+        "pages_read": 1,
+        "point_lookups": 4,
+        "empty_pages": 1,
+        "http_attempts": 5,
+        "retries": 0,
+        "exhausted": true,
+        "last_cursor": null,
+        "current_upper_bound": "0",
+        "current_weighted_bound": "0"
+      }
+    ],
+    "stop_boundary": {
+      "reason": "certified_top_k",
+      "kth_item_id": "x4",
+      "kth_total": "0",
+      "unseen_potential": "0",
+      "unseen_potential_breakdown": [
+        {
+          "source_id": "only",
+          "weight": "2/3",
+          "bound": "0",
+          "weighted_bound": "0",
+          "exhausted": true
+        },
+        {
+          "source_id": "empty-mirror",
+          "weight": "1/3",
+          "bound": "0",
+          "weighted_bound": "0",
+          "exhausted": true
+        }
+      ],
+      "blocking_seen_candidates": [],
+      "notes": "All ranked items have every source component confirmed. Every unresolved/unseen candidate is strictly behind the K-th item for every possible completion; equal unseen potential would have forced continued paging."
+    }
+  },
+  "check": {
+    "expectation": "ranking",
+    "ok": true,
+    "problems": []
+  }
+}

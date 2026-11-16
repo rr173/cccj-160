@@ -1,0 +1,4 @@
+{
+  "note": "float64 ordering differs from the exact Fraction ordering",
+  "float_ordering_differs_from_exact": true
+}

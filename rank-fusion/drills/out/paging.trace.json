@@ -1,0 +1,590 @@
+{
+  "catalog": "paging.json",
+  "snapshot": "snap-paging-2026-11-16",
+  "event_count": 49,
+  "trace": [
+    {
+      "event": "stop_deferred",
+      "reasons": [
+        "fewer_than_k_resolved_items"
+      ],
+      "resolved_count": 0,
+      "unseen_potential": "2",
+      "bounds": {
+        "p1": "1",
+        "p2": "1"
+      },
+      "seq": 1
+    },
+    {
+      "event": "http_request",
+      "source_id": "p1",
+      "op": "page",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:34129/page?source_id=p1&snapshot=snap-paging-2026-11-16&cursor=",
+      "status": 200,
+      "result": "ok",
+      "seq": 2
+    },
+    {
+      "event": "page_applied",
+      "seq": 3,
+      "source_id": "p1",
+      "cursor": "eyJvZmYiOjEsInNsb3QiOjF9",
+      "records": [
+        {
+          "item_id": "p",
+          "score": "4/5"
+        }
+      ],
+      "next_cursor": "eyJvZmYiOjEsInNsb3QiOjF9",
+      "upper_bound": "3/5",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "http_request",
+      "source_id": "p2",
+      "op": "page",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:34129/page?source_id=p2&snapshot=snap-paging-2026-11-16&cursor=",
+      "status": 200,
+      "result": "ok",
+      "seq": 4
+    },
+    {
+      "event": "page_applied",
+      "seq": 5,
+      "source_id": "p2",
+      "cursor": "eyJvZmYiOjMsInNsb3QiOjF9",
+      "records": [
+        {
+          "item_id": "q",
+          "score": "2/3"
+        },
+        {
+          "item_id": "p",
+          "score": "1/3"
+        },
+        {
+          "item_id": "v",
+          "score": "1/6"
+        }
+      ],
+      "next_cursor": "eyJvZmYiOjMsInNsb3QiOjF9",
+      "upper_bound": "0",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "stop_deferred",
+      "reasons": [
+        "fewer_than_k_resolved_items"
+      ],
+      "resolved_count": 0,
+      "unseen_potential": "3/5",
+      "bounds": {
+        "p1": "3/5",
+        "p2": "0"
+      },
+      "seq": 6
+    },
+    {
+      "event": "http_request",
+      "source_id": "p1",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:34129/item?source_id=p1&snapshot=snap-paging-2026-11-16&item_id=p",
+      "status": 200,
+      "result": "ok",
+      "seq": 7
+    },
+    {
+      "event": "item_applied",
+      "seq": 8,
+      "source_id": "p1",
+      "item_id": "p",
+      "present": true,
+      "score": "4/5",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "http_request",
+      "source_id": "p2",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:34129/item?source_id=p2&snapshot=snap-paging-2026-11-16&item_id=p",
+      "status": 200,
+      "result": "ok",
+      "seq": 9
+    },
+    {
+      "event": "item_applied",
+      "seq": 10,
+      "source_id": "p2",
+      "item_id": "p",
+      "present": true,
+      "score": "1/3",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "http_request",
+      "source_id": "p1",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:34129/item?source_id=p1&snapshot=snap-paging-2026-11-16&item_id=q",
+      "status": 200,
+      "result": "ok",
+      "seq": 11
+    },
+    {
+      "event": "item_applied",
+      "seq": 12,
+      "source_id": "p1",
+      "item_id": "q",
+      "present": true,
+      "score": "3/5",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "stop_deferred",
+      "reasons": [
+        "fewer_than_k_resolved_items"
+      ],
+      "resolved_count": 1,
+      "unseen_potential": "3/5",
+      "bounds": {
+        "p1": "3/5",
+        "p2": "0"
+      },
+      "seq": 13
+    },
+    {
+      "event": "http_request",
+      "source_id": "p2",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:34129/item?source_id=p2&snapshot=snap-paging-2026-11-16&item_id=q",
+      "status": 200,
+      "result": "ok",
+      "seq": 14
+    },
+    {
+      "event": "item_applied",
+      "seq": 15,
+      "source_id": "p2",
+      "item_id": "q",
+      "present": true,
+      "score": "2/3",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "http_request",
+      "source_id": "p1",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:34129/item?source_id=p1&snapshot=snap-paging-2026-11-16&item_id=v",
+      "status": 200,
+      "result": "ok",
+      "seq": 16
+    },
+    {
+      "event": "item_applied",
+      "seq": 17,
+      "source_id": "p1",
+      "item_id": "v",
+      "present": false,
+      "score": null,
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "http_request",
+      "source_id": "p2",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:34129/item?source_id=p2&snapshot=snap-paging-2026-11-16&item_id=v",
+      "status": 200,
+      "result": "ok",
+      "seq": 18
+    },
+    {
+      "event": "item_applied",
+      "seq": 19,
+      "source_id": "p2",
+      "item_id": "v",
+      "present": true,
+      "score": "1/6",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "stop_deferred",
+      "reasons": [
+        "fewer_than_k_resolved_items"
+      ],
+      "resolved_count": 3,
+      "unseen_potential": "3/5",
+      "bounds": {
+        "p1": "3/5",
+        "p2": "0"
+      },
+      "seq": 20
+    },
+    {
+      "event": "http_request",
+      "source_id": "p1",
+      "op": "page",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:34129/page?source_id=p1&snapshot=snap-paging-2026-11-16&cursor=eyJvZmYiOjEsInNsb3QiOjF9",
+      "status": 200,
+      "result": "ok",
+      "seq": 21
+    },
+    {
+      "event": "page_applied",
+      "seq": 22,
+      "source_id": "p1",
+      "cursor": "eyJvZmYiOjEsInNsb3QiOjJ9",
+      "records": [],
+      "next_cursor": "eyJvZmYiOjEsInNsb3QiOjJ9",
+      "upper_bound": "3/5",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "http_request",
+      "source_id": "p2",
+      "op": "page",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:34129/page?source_id=p2&snapshot=snap-paging-2026-11-16&cursor=eyJvZmYiOjMsInNsb3QiOjF9",
+      "status": 200,
+      "result": "ok",
+      "seq": 23
+    },
+    {
+      "event": "page_applied",
+      "seq": 24,
+      "source_id": "p2",
+      "cursor": null,
+      "records": [
+        {
+          "item_id": "w",
+          "score": "0"
+        }
+      ],
+      "next_cursor": null,
+      "upper_bound": null,
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "stop_deferred",
+      "reasons": [
+        "fewer_than_k_resolved_items"
+      ],
+      "resolved_count": 3,
+      "unseen_potential": "3/5",
+      "bounds": {
+        "p1": "3/5",
+        "p2": "0"
+      },
+      "seq": 25
+    },
+    {
+      "event": "http_request",
+      "source_id": "p1",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:34129/item?source_id=p1&snapshot=snap-paging-2026-11-16&item_id=w",
+      "status": 200,
+      "result": "ok",
+      "seq": 26
+    },
+    {
+      "event": "item_applied",
+      "seq": 27,
+      "source_id": "p1",
+      "item_id": "w",
+      "present": false,
+      "score": null,
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "http_request",
+      "source_id": "p2",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:34129/item?source_id=p2&snapshot=snap-paging-2026-11-16&item_id=w",
+      "status": 200,
+      "result": "ok",
+      "seq": 28
+    },
+    {
+      "event": "item_applied",
+      "seq": 29,
+      "source_id": "p2",
+      "item_id": "w",
+      "present": true,
+      "score": "0",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "http_request",
+      "source_id": "p1",
+      "op": "page",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:34129/page?source_id=p1&snapshot=snap-paging-2026-11-16&cursor=eyJvZmYiOjEsInNsb3QiOjJ9",
+      "status": 200,
+      "result": "ok",
+      "seq": 30
+    },
+    {
+      "event": "page_applied",
+      "seq": 31,
+      "source_id": "p1",
+      "cursor": "eyJvZmYiOjIsInNsb3QiOjN9",
+      "records": [
+        {
+          "item_id": "q",
+          "score": "3/5"
+        }
+      ],
+      "next_cursor": "eyJvZmYiOjIsInNsb3QiOjN9",
+      "upper_bound": "3/5",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "stop_deferred",
+      "reasons": [
+        "fewer_than_k_resolved_items"
+      ],
+      "resolved_count": 4,
+      "unseen_potential": "3/5",
+      "bounds": {
+        "p1": "3/5",
+        "p2": "0"
+      },
+      "seq": 32
+    },
+    {
+      "event": "http_request",
+      "source_id": "p1",
+      "op": "page",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:34129/page?source_id=p1&snapshot=snap-paging-2026-11-16&cursor=eyJvZmYiOjIsInNsb3QiOjN9",
+      "status": 200,
+      "result": "ok",
+      "seq": 33
+    },
+    {
+      "event": "page_applied",
+      "seq": 34,
+      "source_id": "p1",
+      "cursor": "eyJvZmYiOjIsInNsb3QiOjR9",
+      "records": [],
+      "next_cursor": "eyJvZmYiOjIsInNsb3QiOjR9",
+      "upper_bound": "3/5",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "stop_deferred",
+      "reasons": [
+        "fewer_than_k_resolved_items"
+      ],
+      "resolved_count": 4,
+      "unseen_potential": "3/5",
+      "bounds": {
+        "p1": "3/5",
+        "p2": "0"
+      },
+      "seq": 35
+    },
+    {
+      "event": "http_request",
+      "source_id": "p1",
+      "op": "page",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:34129/page?source_id=p1&snapshot=snap-paging-2026-11-16&cursor=eyJvZmYiOjIsInNsb3QiOjR9",
+      "status": 200,
+      "result": "ok",
+      "seq": 36
+    },
+    {
+      "event": "page_applied",
+      "seq": 37,
+      "source_id": "p1",
+      "cursor": "eyJvZmYiOjMsInNsb3QiOjV9",
+      "records": [
+        {
+          "item_id": "r",
+          "score": "3/5"
+        }
+      ],
+      "next_cursor": "eyJvZmYiOjMsInNsb3QiOjV9",
+      "upper_bound": "1/2",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "stop_deferred",
+      "reasons": [
+        "fewer_than_k_resolved_items"
+      ],
+      "resolved_count": 4,
+      "unseen_potential": "1/2",
+      "bounds": {
+        "p1": "1/2",
+        "p2": "0"
+      },
+      "seq": 38
+    },
+    {
+      "event": "http_request",
+      "source_id": "p1",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:34129/item?source_id=p1&snapshot=snap-paging-2026-11-16&item_id=r",
+      "status": 200,
+      "result": "ok",
+      "seq": 39
+    },
+    {
+      "event": "item_applied",
+      "seq": 40,
+      "source_id": "p1",
+      "item_id": "r",
+      "present": true,
+      "score": "3/5",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "http_request",
+      "source_id": "p2",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:34129/item?source_id=p2&snapshot=snap-paging-2026-11-16&item_id=r",
+      "status": 200,
+      "result": "ok",
+      "seq": 41
+    },
+    {
+      "event": "item_applied",
+      "seq": 42,
+      "source_id": "p2",
+      "item_id": "r",
+      "present": false,
+      "score": null,
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "http_request",
+      "source_id": "p1",
+      "op": "page",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:34129/page?source_id=p1&snapshot=snap-paging-2026-11-16&cursor=eyJvZmYiOjMsInNsb3QiOjV9",
+      "status": 200,
+      "result": "ok",
+      "seq": 43
+    },
+    {
+      "event": "page_applied",
+      "seq": 44,
+      "source_id": "p1",
+      "cursor": "eyJvZmYiOjQsInNsb3QiOjZ9",
+      "records": [
+        {
+          "item_id": "s",
+          "score": "1/2"
+        }
+      ],
+      "next_cursor": "eyJvZmYiOjQsInNsb3QiOjZ9",
+      "upper_bound": "0",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "stop_deferred",
+      "reasons": [
+        "unseen_potential_ge_kth(equal: smaller-id unseen item could win tie-break)"
+      ],
+      "resolved_count": 5,
+      "unseen_potential": "0",
+      "bounds": {
+        "p1": "0",
+        "p2": "0"
+      },
+      "seq": 45
+    },
+    {
+      "event": "http_request",
+      "source_id": "p1",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:34129/item?source_id=p1&snapshot=snap-paging-2026-11-16&item_id=s",
+      "status": 200,
+      "result": "ok",
+      "seq": 46
+    },
+    {
+      "event": "item_applied",
+      "seq": 47,
+      "source_id": "p1",
+      "item_id": "s",
+      "present": true,
+      "score": "1/2",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "http_request",
+      "source_id": "p2",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:34129/item?source_id=p2&snapshot=snap-paging-2026-11-16&item_id=s",
+      "status": 200,
+      "result": "ok",
+      "seq": 48
+    },
+    {
+      "event": "item_applied",
+      "seq": 49,
+      "source_id": "p2",
+      "item_id": "s",
+      "present": false,
+      "score": null,
+      "attempts": 1,
+      "retries": 0
+    }
+  ]
+}

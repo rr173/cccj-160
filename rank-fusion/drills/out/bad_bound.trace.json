@@ -1,0 +1,311 @@
+{
+  "catalog": "bad_bound.json",
+  "snapshot": "snap-badbound-2026-11-16",
+  "event_count": 26,
+  "trace": [
+    {
+      "event": "stop_deferred",
+      "reasons": [
+        "fewer_than_k_resolved_items"
+      ],
+      "resolved_count": 0,
+      "unseen_potential": "2",
+      "bounds": {
+        "up": "1",
+        "low": "1"
+      },
+      "seq": 1
+    },
+    {
+      "event": "http_request",
+      "source_id": "up",
+      "op": "page",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:42755/page?source_id=up&snapshot=snap-badbound-2026-11-16&cursor=",
+      "status": 200,
+      "result": "ok",
+      "seq": 2
+    },
+    {
+      "event": "page_applied",
+      "seq": 3,
+      "source_id": "up",
+      "cursor": "eyJvZmYiOjIsInNsb3QiOjF9",
+      "records": [
+        {
+          "item_id": "u1",
+          "score": "1"
+        },
+        {
+          "item_id": "u2",
+          "score": "3/4"
+        }
+      ],
+      "next_cursor": "eyJvZmYiOjIsInNsb3QiOjF9",
+      "upper_bound": "1/3",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "http_request",
+      "source_id": "low",
+      "op": "page",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:42755/page?source_id=low&snapshot=snap-badbound-2026-11-16&cursor=",
+      "status": 200,
+      "result": "ok",
+      "seq": 4
+    },
+    {
+      "event": "page_applied",
+      "seq": 5,
+      "source_id": "low",
+      "cursor": "eyJvZmYiOjIsInNsb3QiOjF9",
+      "records": [
+        {
+          "item_id": "l1",
+          "score": "1"
+        },
+        {
+          "item_id": "l2",
+          "score": "3/4"
+        }
+      ],
+      "next_cursor": "eyJvZmYiOjIsInNsb3QiOjF9",
+      "upper_bound": "1/100",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "stop_deferred",
+      "reasons": [
+        "fewer_than_k_resolved_items"
+      ],
+      "resolved_count": 0,
+      "unseen_potential": "103/300",
+      "bounds": {
+        "up": "1/3",
+        "low": "1/100"
+      },
+      "seq": 6
+    },
+    {
+      "event": "http_request",
+      "source_id": "up",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:42755/item?source_id=up&snapshot=snap-badbound-2026-11-16&item_id=u1",
+      "status": 200,
+      "result": "ok",
+      "seq": 7
+    },
+    {
+      "event": "item_applied",
+      "seq": 8,
+      "source_id": "up",
+      "item_id": "u1",
+      "present": true,
+      "score": "1",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "http_request",
+      "source_id": "low",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:42755/item?source_id=low&snapshot=snap-badbound-2026-11-16&item_id=u1",
+      "status": 200,
+      "result": "ok",
+      "seq": 9
+    },
+    {
+      "event": "item_applied",
+      "seq": 10,
+      "source_id": "low",
+      "item_id": "u1",
+      "present": false,
+      "score": null,
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "http_request",
+      "source_id": "up",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:42755/item?source_id=up&snapshot=snap-badbound-2026-11-16&item_id=u2",
+      "status": 200,
+      "result": "ok",
+      "seq": 11
+    },
+    {
+      "event": "item_applied",
+      "seq": 12,
+      "source_id": "up",
+      "item_id": "u2",
+      "present": true,
+      "score": "3/4",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "http_request",
+      "source_id": "low",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:42755/item?source_id=low&snapshot=snap-badbound-2026-11-16&item_id=u2",
+      "status": 200,
+      "result": "ok",
+      "seq": 13
+    },
+    {
+      "event": "item_applied",
+      "seq": 14,
+      "source_id": "low",
+      "item_id": "u2",
+      "present": false,
+      "score": null,
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "stop_deferred",
+      "reasons": [
+        "fewer_than_k_resolved_items"
+      ],
+      "resolved_count": 2,
+      "unseen_potential": "103/300",
+      "bounds": {
+        "up": "1/3",
+        "low": "1/100"
+      },
+      "seq": 15
+    },
+    {
+      "event": "http_request",
+      "source_id": "up",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:42755/item?source_id=up&snapshot=snap-badbound-2026-11-16&item_id=l1",
+      "status": 200,
+      "result": "ok",
+      "seq": 16
+    },
+    {
+      "event": "item_applied",
+      "seq": 17,
+      "source_id": "up",
+      "item_id": "l1",
+      "present": false,
+      "score": null,
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "http_request",
+      "source_id": "low",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:42755/item?source_id=low&snapshot=snap-badbound-2026-11-16&item_id=l1",
+      "status": 200,
+      "result": "ok",
+      "seq": 18
+    },
+    {
+      "event": "item_applied",
+      "seq": 19,
+      "source_id": "low",
+      "item_id": "l1",
+      "present": true,
+      "score": "1",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "http_request",
+      "source_id": "up",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:42755/item?source_id=up&snapshot=snap-badbound-2026-11-16&item_id=l2",
+      "status": 200,
+      "result": "ok",
+      "seq": 20
+    },
+    {
+      "event": "item_applied",
+      "seq": 21,
+      "source_id": "up",
+      "item_id": "l2",
+      "present": false,
+      "score": null,
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "http_request",
+      "source_id": "low",
+      "op": "item",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:42755/item?source_id=low&snapshot=snap-badbound-2026-11-16&item_id=l2",
+      "status": 200,
+      "result": "ok",
+      "seq": 22
+    },
+    {
+      "event": "item_applied",
+      "seq": 23,
+      "source_id": "low",
+      "item_id": "l2",
+      "present": true,
+      "score": "3/4",
+      "attempts": 1,
+      "retries": 0
+    },
+    {
+      "event": "stop_deferred",
+      "reasons": [
+        "fewer_than_k_resolved_items"
+      ],
+      "resolved_count": 4,
+      "unseen_potential": "103/300",
+      "bounds": {
+        "up": "1/3",
+        "low": "1/100"
+      },
+      "seq": 24
+    },
+    {
+      "event": "http_request",
+      "source_id": "up",
+      "op": "page",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:42755/page?source_id=up&snapshot=snap-badbound-2026-11-16&cursor=eyJvZmYiOjIsInNsb3QiOjF9",
+      "status": 200,
+      "result": "ok",
+      "seq": 25
+    },
+    {
+      "event": "http_request",
+      "source_id": "low",
+      "op": "page",
+      "attempt": 1,
+      "method": "GET",
+      "url": "http://127.0.0.1:42755/page?source_id=low&snapshot=snap-badbound-2026-11-16&cursor=eyJvZmYiOjIsInNsb3QiOjF9",
+      "status": 200,
+      "result": "ok",
+      "seq": 26
+    }
+  ]
+}

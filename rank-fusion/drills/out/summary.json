@@ -1,0 +1,56 @@
+[
+  {
+    "scenario": "main.json",
+    "status": "complete",
+    "ok": true,
+    "problems": []
+  },
+  {
+    "scenario": "tail_tie.json",
+    "status": "complete",
+    "ok": true,
+    "problems": []
+  },
+  {
+    "scenario": "single_source.json",
+    "status": "complete",
+    "ok": true,
+    "problems": []
+  },
+  {
+    "scenario": "all_empty.json",
+    "status": "complete",
+    "ok": true,
+    "problems": []
+  },
+  {
+    "scenario": "paging.json",
+    "status": "complete",
+    "ok": true,
+    "problems": []
+  },
+  {
+    "scenario": "near_tie.json",
+    "status": "complete",
+    "ok": true,
+    "problems": []
+  },
+  {
+    "scenario": "retry_429.json",
+    "status": "complete",
+    "ok": true,
+    "problems": []
+  },
+  {
+    "scenario": "bad_bound.json",
+    "status": "incomplete",
+    "ok": true,
+    "problems": []
+  },
+  {
+    "scenario": "kzero",
+    "status": "complete",
+    "ok": true,
+    "problems": []
+  }
+]

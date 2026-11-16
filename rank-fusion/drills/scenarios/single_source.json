@@ -1,0 +1,22 @@
+{
+  "catalog_snapshot": "snap-single-2026-11-16",
+  "sources": [
+    {
+      "source_id": "only",
+      "snapshot": "snap-single-2026-11-16",
+      "page_size": 2,
+      "entries": [
+        {"item_id": "x1", "score": "3/4"},
+        {"item_id": "x2", "score": "1/2"},
+        {"item_id": "x3", "score": "1/3"},
+        {"item_id": "x4", "score": "0"}
+      ]
+    },
+    {
+      "source_id": "empty-mirror",
+      "snapshot": "snap-single-2026-11-16",
+      "page_size": 2,
+      "entries": []
+    }
+  ]
+}

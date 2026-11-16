@@ -1,0 +1,25 @@
+{
+  "catalog_snapshot": "snap-tailtie-2026-11-16",
+  "sources": [
+    {
+      "source_id": "src-1",
+      "snapshot": "snap-tailtie-2026-11-16",
+      "page_size": 1,
+      "entries": [
+        {"item_id": "a1", "score": "1/2"},
+        {"item_id": "m", "score": "1/2"},
+        {"item_id": "r1", "score": "1/4"}
+      ]
+    },
+    {
+      "source_id": "src-2",
+      "snapshot": "snap-tailtie-2026-11-16",
+      "page_size": 1,
+      "entries": [
+        {"item_id": "a2", "score": "1/2"},
+        {"item_id": "q", "score": "1/2"},
+        {"item_id": "r2", "score": "1/4"}
+      ]
+    }
+  ]
+}

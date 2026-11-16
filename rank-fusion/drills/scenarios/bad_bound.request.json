@@ -1,0 +1,20 @@
+{
+  "catalog_snapshot": "snap-badbound-2026-11-16",
+  "k": 10,
+  "weights": {
+    "up": "1",
+    "low": "1"
+  },
+  "sources": [
+    {
+      "source_id": "up",
+      "base_url": "${BASE_URL}"
+    },
+    {
+      "source_id": "low",
+      "base_url": "${BASE_URL}"
+    }
+  ],
+  "max_concurrency": 4,
+  "max_attempts": 5
+}
